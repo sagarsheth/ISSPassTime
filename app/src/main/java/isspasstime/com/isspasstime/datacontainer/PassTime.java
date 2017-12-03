@@ -1,4 +1,4 @@
-package isspasstime.com.isspasstime.pojoclass;
+package isspasstime.com.isspasstime.datacontainer;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

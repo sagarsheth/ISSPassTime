@@ -2,19 +2,15 @@ package isspasstime.com.isspasstime.isspasstimeview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
-import isspasstime.com.isspasstime.pojoclass.PassTime;
+import isspasstime.com.isspasstime.datacontainer.PassTime;
+import isspasstime.com.isspasstime.utils.Utils;
 
 /**
  * Created by Sagar on 12/3/2017.
@@ -74,7 +70,7 @@ public class ISSPassTimeAdapter extends RecyclerView.Adapter<ISSPassTimeAdapter.
         TextView textView1 = holder.textv1;
         textView1.setText("Pass " + (position + 1) + " Duration is " + passTimes.getDuration().toString() + "Sec");
         TextView textView2 = holder.textv2;
-        textView2.setText("Pass " + (position + 1) + " Time is " + getCurrentTime(passTimes.getRisetime()));
+        textView2.setText("Pass " + (position + 1) + " Time is " + Utils.getCurrentTime(passTimes.getRisetime()));
     }
 
     @Override
@@ -93,14 +89,5 @@ public class ISSPassTimeAdapter extends RecyclerView.Adapter<ISSPassTimeAdapter.
 
     public interface PostItemListener {
         void onPostClick(long id);
-    }
-
-    private String getCurrentTime(long timestamp) {
-        Calendar cal = Calendar.getInstance();
-        TimeZone tz = cal.getTimeZone();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        sdf.setTimeZone(tz);
-        String localTime = sdf.format(new Date(timestamp * 1000));
-        return localTime;
     }
 }

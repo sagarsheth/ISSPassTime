@@ -1,4 +1,4 @@
-package isspasstime.com.isspasstime.pojoclass;
+package isspasstime.com.isspasstime.datacontainer;
 
 /**
  * Created by Sagar on 12/3/2017.

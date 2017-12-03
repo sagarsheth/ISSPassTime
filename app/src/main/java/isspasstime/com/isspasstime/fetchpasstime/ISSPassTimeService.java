@@ -1,9 +1,8 @@
 package isspasstime.com.isspasstime.fetchpasstime;
 
-import isspasstime.com.isspasstime.pojoclass.ISSPassDetails;
+import isspasstime.com.isspasstime.datacontainer.ISSPassDetails;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
